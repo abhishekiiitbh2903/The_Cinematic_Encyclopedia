@@ -1,0 +1,60 @@
+@mixin sm {
+    @media only screen and (min-width: 640px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media only screen and (min-width: 1536px) {
+        @content;
+    }
+}
+
+@mixin ellipsis($line: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@mixin ease-in-out-animation($animation-name, $duration) {
+    @keyframes #{$animation-name} {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    animation: #{$animation-name} $duration ease-in-out;
+  }
+  @mixin scale-up-logo($scale-factor) {
+    transform: scale($scale-factor);
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale($scale-factor + 0.1);
+    }
+  }
+  
